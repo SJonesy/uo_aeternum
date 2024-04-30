@@ -255,6 +255,19 @@ namespace Server.Engines.Harvest
                 from.SendLocalizedMessage(1005213); // You can't do that
         }
 
+        public override void StartHarvesting(Mobile from, Item tool, object toHarvest)
+        {
+            if (from == toHarvest)
+            {
+                const int RESOURCE_TYPE_WOOD = 2;
+                var target = new TargetByResourceMacroEventArgs(from, tool, RESOURCE_TYPE_WOOD);
+                TargetByResource(target);
+                return;
+            }
+
+            base.StartHarvesting(from, tool, toHarvest);
+        }
+
         public override void OnHarvestStarted(Mobile from, Item tool, HarvestDefinition def, object toHarvest)
         {
             base.OnHarvestStarted(from, tool, def, toHarvest);

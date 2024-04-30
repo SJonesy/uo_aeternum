@@ -23,43 +23,6 @@ namespace Server.Engines.Harvest
 
         protected override void OnTarget(Mobile from, object targeted)
         {
-            if (m_System is Mining)
-            {
-                if (targeted is StaticTarget)
-                {
-                    int itemID = ((StaticTarget)targeted).ItemID;
-
-                    // grave
-                    if (itemID == 0xED3 || itemID == 0xEDF || itemID == 0xEE0 || itemID == 0xEE1 || itemID == 0xEE2 || itemID == 0xEE8)
-                    {
-                        PlayerMobile player = from as PlayerMobile;
-
-                        if (player != null)
-                        {
-                            QuestSystem qs = player.Quest;
-
-                            if (qs is WitchApprenticeQuest)
-                            {
-                                FindIngredientObjective obj = qs.FindObjective(typeof(FindIngredientObjective)) as FindIngredientObjective;
-
-                                if (obj != null && !obj.Completed && obj.Ingredient == Ingredient.Bones)
-                                {
-                                    player.SendLocalizedMessage(1055037); // You finish your grim work, finding some of the specific bones listed in the Hag's recipe.
-                                    obj.Complete();
-
-                                    return;
-                                }
-                            }
-                        }
-                    }
-                }
-                else if (targeted is LandTarget && ((LandTarget)targeted).TileID >= 113 && ((LandTarget)targeted).TileID <= 120)
-                {
-                    if (Server.Engines.Quests.TheGreatVolcanoQuest.OnHarvest(from, m_Tool))
-                        return;
-                }
-            }
-
             if (m_System is Lumberjacking && targeted is IChopable)
                 ((IChopable)targeted).OnChop(from);
             else if (m_System is Lumberjacking && targeted is IAxe && m_Tool is BaseAxe)
@@ -78,14 +41,6 @@ namespace Server.Engines.Harvest
                 DestroyFurniture(from, (Item)targeted);
             else if (m_System is Mining && targeted is TreasureMap)
                 ((TreasureMap)targeted).OnBeginDig(from);
-            #region High Seas
-            else if (m_System is Mining && targeted is NiterDeposit)
-                ((NiterDeposit)targeted).OnMine(from, m_Tool);
-            else if (m_System is Lumberjacking && targeted is CrackedLavaRockEast)
-                ((CrackedLavaRockEast)targeted).OnCrack(from);
-            else if (m_System is Lumberjacking && targeted is CrackedLavaRockSouth)
-                ((CrackedLavaRockSouth)targeted).OnCrack(from);
-            #endregion
 			else
 			{
 				// If we got here and we're lumberjacking then we didn't target something that can be done from the pack

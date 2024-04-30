@@ -3,6 +3,9 @@ using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
 using System.Linq;
+using System.Security.Cryptography;
+using Ultima;
+using System.Diagnostics;
 
 namespace Server.Engines.Harvest
 {
@@ -499,6 +502,19 @@ namespace Server.Engines.Harvest
             {
                 from.SendLocalizedMessage(501864); // You can't dig while riding or flying.
             }
+        }
+
+        public override void StartHarvesting(Mobile from, Item tool, object toHarvest)
+        {
+            if (from == toHarvest)
+            {
+                const int RESOURCE_TYPE_ORE = 0;
+                var target = new TargetByResourceMacroEventArgs(from, tool, RESOURCE_TYPE_ORE);
+                TargetByResource(target);
+                return;
+            }
+
+            base.StartHarvesting(from, tool, toHarvest);
         }
 
         #region Tile lists
