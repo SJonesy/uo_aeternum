@@ -1,3 +1,12 @@
+Murderer System:
+- In order to attack innocent players, you must be a murderer. 
+- To become a murderer, go to the chaos shrine and say "I am ready to embrace chaos." You must have 10000 gold on your person or in your bank account to do this.
+- Murderers can not enter many regions unless they're carrying a "Stone of Malice" (or something). These regions include dungeons and some gathering regions.
+- A "Stone of Malice" is an item that drops from some evil mobs and can be traded between players.
+- A "Stone of Malice" can be traded to any Paladin NPC for some amount of gold or rewards.
+
+
+
 # [ServUO]
 
 [![Build Status](https://travis-ci.com/ServUO/ServUO.svg?branch=master)](https://travis-ci.com/ServUO/ServUO)
