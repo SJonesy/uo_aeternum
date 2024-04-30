@@ -42,10 +42,7 @@ namespace Server.Misc
 				return false;
 			if (profession < 4)
 				return true;
-			if (Core.AOS && profession < 6)
-				return true;
-			if (Core.SE && profession < 8)
-				return true;
+
 			return false;
 		}
 
@@ -61,42 +58,24 @@ namespace Server.Misc
 				m.AddItem(pack);
 			}
 
-			PackItem(new RedBook("a book", m.Name, 20, true));
-			PackItem(new Gold(1000)); // Starting gold can be customized here
-			PackItem(new Candle());
-
-			if (m.Race != Race.Gargoyle)
-				PackItem(new Dagger());
-			else
-				PackItem(new GargishDagger());
+			PackItem(new Dagger());
 		}
 
 		private static void AddShirt(Mobile m, int shirtHue)
 		{
 			var hue = Utility.ClipDyedHue(shirtHue & 0x3FFF);
 
-			if (m.Race == Race.Elf)
+			switch (Utility.Random(3))
 			{
-				EquipItem(new ElvenShirt(hue), true);
-			}
-			else if (m.Race == Race.Human)
-			{
-				switch (Utility.Random(3))
-				{
-					case 0:
-						EquipItem(new Shirt(hue), true);
-						break;
-					case 1:
-						EquipItem(new FancyShirt(hue), true);
-						break;
-					case 2:
-						EquipItem(new Doublet(hue), true);
-						break;
-				}
-			}
-			else if (m.Race == Race.Gargoyle)
-			{
-				EquipItem(new GargishClothChestArmor(hue));
+				case 0:
+					EquipItem(new Shirt(hue), true);
+					break;
+				case 1:
+					EquipItem(new FancyShirt(hue), true);
+					break;
+				case 2:
+					EquipItem(new Doublet(hue), true);
+					break;
 			}
 		}
 
@@ -104,49 +83,35 @@ namespace Server.Misc
 		{
 			var hue = Utility.ClipDyedHue(pantsHue & 0x3FFF);
 
-			if (m.Race == Race.Elf)
+			if (m.Female)
 			{
-				EquipItem(new ElvenPants(hue), true);
-			}
-			else if (m.Race == Race.Human)
-			{
-				if (m.Female)
+				switch (Utility.Random(2))
 				{
-					switch (Utility.Random(2))
-					{
-						case 0:
-							EquipItem(new Skirt(hue), true);
-							break;
-						case 1:
-							EquipItem(new Kilt(hue), true);
-							break;
-					}
-				}
-				else
-				{
-					switch (Utility.Random(2))
-					{
-						case 0:
-							EquipItem(new LongPants(hue), true);
-							break;
-						case 1:
-							EquipItem(new ShortPants(hue), true);
-							break;
-					}
+					case 0:
+						EquipItem(new Skirt(hue), true);
+						break;
+					case 1:
+						EquipItem(new Kilt(hue), true);
+						break;
 				}
 			}
-			else if (m.Race == Race.Gargoyle)
+			else
 			{
-				EquipItem(new GargishClothKiltArmor(hue));
+				switch (Utility.Random(2))
+				{
+					case 0:
+						EquipItem(new LongPants(hue), true);
+						break;
+					case 1:
+						EquipItem(new ShortPants(hue), true);
+						break;
+				}
 			}
 		}
 
 		private static void AddShoes(Mobile m)
 		{
-			if (m.Race == Race.Elf)
-				EquipItem(new ElvenBoots(), true);
-			else if (m.Race == Race.Human)
-				EquipItem(new Shoes(Utility.RandomYellowHue()), true);
+			EquipItem(new Shoes(Utility.RandomYellowHue()), true);
 		}
 
 		private static Mobile CreateMobile(Account a)
@@ -189,18 +154,9 @@ namespace Server.Misc
 			newChar.Player = true;
 			newChar.AccessLevel = args.Account.AccessLevel;
 			newChar.Female = args.Female;
-			//newChar.Body = newChar.Female ? 0x191 : 0x190;
-
-			if (Core.Expansion >= args.Race.RequiredExpansion)
-				newChar.Race = args.Race; //Sets body
-			else
-				newChar.Race = Race.DefaultRace;
-
+			newChar.Race = Race.DefaultRace;
 			newChar.Hue = args.Hue | 0x8000;
-
 			newChar.Hunger = 20;
-
-			var young = false;
 
 			if (newChar is PlayerMobile)
 			{
@@ -217,9 +173,7 @@ namespace Server.Misc
 				}
 				
 				pm.Profession = args.Profession;
-
-				if (pm.IsPlayer() && pm.Account.Young && !Siege.SiegeShard)
-					young = pm.Young = true;
+                pm.Young = false;
 			}
 
 			SetName(newChar, args.Name);
@@ -266,20 +220,12 @@ namespace Server.Misc
 			if (TestCenter.Enabled)
 				TestCenter.FillBankbox(newChar);
 
-			if (young)
-			{
-				var ticket = new NewPlayerTicket
-				{
-					Owner = newChar
-				};
-				
-				newChar.BankBox.DropItem(ticket);
-			}
-
 			var city = args.City;
-			var map = Siege.SiegeShard && city.Map == Map.Trammel ? Map.Felucca : city.Map;
+			var map = Map.Felucca;
 
-			newChar.MoveToWorld(city.Location, map);
+            // TODO rabbi: this is Moonglow, we need a real start location
+            var startingLocation = new Point3D(4442, 1172, 0);
+            newChar.MoveToWorld(startingLocation, map);
 
 			Utility.PushColor(ConsoleColor.Green);
 			Console.WriteLine("Login: {0}: New character being created (account={1})", state, args.Account.Username);
