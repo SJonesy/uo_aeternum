@@ -1,0 +1,641 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Shif",
+				"ShiftUp"
+			],
+			[
+				"aggr",
+				"aggressive"
+			],
+			[
+				"comp",
+				"completely"
+			],
+			[
+				"Symbo",
+				"SymbolsZipLocalPath"
+			],
+			[
+				"SYMB",
+				"SYMBOLS_ZIP_LOCAL_PATH"
+			],
+			[
+				"Binari",
+				"BINARIES_ZIP_LOCAL_PATH"
+			],
+			[
+				"SYM",
+				"SYMBOLS_ZIP"
+			],
+			[
+				"SMYBOL",
+				"SYMBOLS_ZIP"
+			],
+			[
+				"BINARI",
+				"BINARIES_ZIP"
+			],
+			[
+				"SYMBOL",
+				"SYMBOLS_ZIP_BASE"
+			],
+			[
+				"build",
+				"build_number"
+			],
+			[
+				"OAK2",
+				"OAK2-PADWIN64"
+			],
+			[
+				"Action",
+				"ActionParameters"
+			],
+			[
+				"Con",
+				"ConfigFile"
+			],
+			[
+				"revision",
+				"RevisionInfo"
+			],
+			[
+				"Exi",
+				"Exit-Process"
+			],
+			[
+				"Fleet",
+				"FleetInfo"
+			],
+			[
+				"Conv",
+				"ConvertFrom-Json"
+			],
+			[
+				"fleet",
+				"fleet_list"
+			],
+			[
+				"Flee",
+				"FleetInfo"
+			],
+			[
+				"rev",
+				"revision_info_json"
+			],
+			[
+				"flee",
+				"fleet_info_json"
+			],
+			[
+				"revis",
+				"revision_info_json"
+			],
+			[
+				"Conver",
+				"ConvertTo-Json"
+			],
+			[
+				"STEAM",
+				"STEAM_OAK2_APPID"
+			],
+			[
+				"app",
+				"app_info"
+			],
+			[
+				"Wri",
+				"Write-Host"
+			],
+			[
+				"steam",
+				"steam_cmd_output"
+			],
+			[
+				"stea",
+				"steam_cmd_output"
+			],
+			[
+				"Convert",
+				"ConvertFrom-Json"
+			],
+			[
+				"Writ",
+				"Write-Output"
+			],
+			[
+				"For",
+				"ForegroundColor"
+			],
+			[
+				"CONFLU",
+				"CONFLUENCE_PASSWORD"
+			],
+			[
+				"CONF",
+				"CONFLUENCE_USER"
+			],
+			[
+				"GAM",
+				"GAMELIFT_PUBLISH_PROJECT"
+			],
+			[
+				"re",
+				"revision"
+			],
+			[
+				"game",
+				"gameliftBuildToRevision"
+			],
+			[
+				"SEr",
+				"ServerBuildKey"
+			],
+			[
+				"serverB",
+				"serverBuildKey"
+			],
+			[
+				"ser",
+				"serverBuildKey"
+			],
+			[
+				"Get",
+				"Get-BuildKey"
+			],
+			[
+				"O",
+				"OAK2-PADWIN64"
+			],
+			[
+				"client",
+				"client_builds_list"
+			],
+			[
+				"BAMB",
+				"BAMBOO_HEADERS"
+			],
+			[
+				"heavy",
+				"HeavyCrossbow"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"View Package File"
+			],
+			[
+				"",
+				"AlignTab"
+			],
+			[
+				"align",
+				"AlignTab"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Games/uo_aeternum/Config/XmlSpawner2.cfg",
+		"/C/Games/uo_aeternum/Config/VvV.cfg",
+		"/C/Games/uo_aeternum/Config/VetRewards.cfg",
+		"/C/Games/uo_aeternum/Config/Vendors.cfg",
+		"/C/Games/uo_aeternum/Config/TreasureMaps.cfg",
+		"/C/Games/uo_aeternum/Config/TestCenter.cfg",
+		"/C/Games/uo_aeternum/Config/Store.cfg",
+		"/C/Games/uo_aeternum/Config/Staff.cfg",
+		"/C/Games/uo_aeternum/Config/Siege.cfg",
+		"/C/Games/uo_aeternum/Config/Shadowguard.cfg",
+		"/C/Games/uo_aeternum/Config/Server.cfg",
+		"/C/Games/uo_aeternum/Config/Reports.cfg",
+		"/C/Games/uo_aeternum/Config/README.md",
+		"/C/Games/uo_aeternum/Config/PlayerCaps.cfg",
+		"/C/Games/uo_aeternum/Config/Loot.cfg",
+		"/C/Games/uo_aeternum/Config/Housing.cfg",
+		"/C/Games/uo_aeternum/Config/Honesty.cfg",
+		"/C/Games/uo_aeternum/Config/General.cfg",
+		"/C/Games/uo_aeternum/Config/Factions.cfg",
+		"/C/Games/uo_aeternum/Config/Expansion.cfg",
+		"/C/Games/uo_aeternum/Config/Email.cfg",
+		"/C/Games/uo_aeternum/Config/DataPath.cfg",
+		"/C/Games/uo_aeternum/Config/DailyRares.cfg",
+		"/C/Games/uo_aeternum/Config/Client.cfg",
+		"/C/Games/uo_aeternum/Config/CityTrading.cfg",
+		"/C/Games/uo_aeternum/Config/CityLoyalty.cfg",
+		"/C/Games/uo_aeternum/Config/Chat.cfg",
+		"/C/Games/uo_aeternum/Config/ChampionSpawns.xml",
+		"/C/Games/uo_aeternum/Config/Champions.cfg",
+		"/C/Games/uo_aeternum/Config/AutoSave.cfg",
+		"/C/Games/uo_aeternum/Config/AutoRestart.cfg",
+		"/C/Games/uo_aeternum/Config/Accounts.cfg",
+		"/C/Users/anonymous/AppData/Roaming/Sublime Text 3/Packages/Package Control.sublime-package",
+		"/C/Games/UO Tools/Razor Scripts/potions.txt",
+		"/C/Users/anonymous/Documents/2drpgnotes",
+		"/C/Games/uo_aeternum/ServUO.exe.config",
+		"/C/Users/anonymous/Documents/poenotes.txt",
+		"/C/Games/Ultima Online Outlands/ClassicUO/game.dat",
+		"/C/Games/Ultima Online Outlands/ClassicUO/ClassicUO.linux",
+		"/C/Games/Ultima Online Outlands/ClassicUO/config.json",
+		"/C/Games/Ultima Online Outlands/ClassicUO/Data/Plugins/Assistant/settings.csv",
+		"/C/Games/Ultima Online Outlands/ClassicUO/Data/Plugins/Assistant/spells.def",
+		"/C/Games/Ultima Online Outlands/ClassicUO/settings.json",
+		"/C/Games/AHK Scripts/daoc/keybinds.ahk",
+		"/C/Games/Steam/steamapps/common/Erannorth Chronicles/Erannorth Chronicles_Data/StreamingAssets/Content/Expansions/Erannorth Chronicles/GameModes/VanillaCustom.json",
+		"/C/Users/anonymous/Desktop/buildlog.txt",
+		"/C/tmp/findcerts.ps1",
+		"/C/Users/anonymous/Downloads/Psila_Summary.txt",
+		"/C/Games/Steam/steamapps/common/Erannorth Chronicles/Erannorth Chronicles_Data/StreamingAssets/Content/Expansions/Erannorth Chronicles/GameModes/Conquest.json",
+		"/C/Games/Steam/steamapps/common/Erannorth Chronicles/Erannorth Chronicles_Data/StreamingAssets/Content/Expansions/Erannorth Chronicles/Actions/Actions.Core.tdb",
+		"/C/Users/anonymous/Desktop/Psila.znk",
+		"/C/Games/Ultima Online Outlands/Outlands.exe.json",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/anonymous/Desktop/logs-from-main-in-maui-game-server-fvpvt-rscqw(1).log",
+		"/C/Games/AHK Scripts/daoc/test.ahk",
+		"/C/Games/Ultima Online Outlands/MainMisc.uop",
+		"/C/Games/Ultima Online Outlands/misc.txt",
+		"/C/Games/Ultima Online Outlands/Outlands.exe.args",
+		"/C/Games/Ultima Online Outlands/Outlands.exe.bak",
+		"/C/Games/Ultima Online Outlands/ClassicUO/FNA.dll.config",
+		"/C/Games/Ultima Online Outlands/ClassicUO/config.unix.json",
+		"/C/Games/AHK Scripts/daoc/keybinds.au3",
+		"/C/Games/Dark Age of Camelot/default1024.ini",
+		"/C/Games/AHK Scripts/daoc/keybinds.ai3",
+		"/C/Program Files (x86)/AutoIt3/Examples/functions.au3",
+		"/C/Users/anonymous/Downloads/39 Hero.ahk",
+		"/C/Users/anonymous/Downloads/Eden Stealther v3.ahk",
+		"/C/Users/anonymous/Documents/ff_ultra_party.txt",
+		"/D/Incoming/Web/LookingToLeave.txt",
+		"/W/oak2/OakGame/Binaries/Win64/twoclients.cmd",
+		"/C/Users/anonymous/Desktop/Symbolicator/symbolicate.ps1",
+		"/C/Users/anonymous/Desktop/@32320/0ED386/OakGame.log",
+		"/C/Users/anonymous/Desktop/@32310/102788/OakGame.log",
+		"/C/Users/anonymous/Desktop/@32320/AFA457/OakGame.log",
+		"/C/Users/anonymous/Desktop/@32300/11A988/OakGame.log",
+		"/C/Users/anonymous/Desktop/@32310/2BA995/OakGame.log",
+		"/C/Users/anonymous/Desktop/Symbolicator/CrashContext.runtime-xml",
+		"/C/Users/anonymous/Desktop/bard.ahk",
+		"/C/Users/anonymous/Desktop/emails.txt",
+		"/W/auth/shift-stable-ozone1.yaml",
+		"/C/Users/anonymous/Desktop/OakGame.log",
+		"/C/Users/anonymous/Desktop/@32300/D005E8/OakGame.log",
+		"/C/Users/anonymous/Downloads/OakGame - Copy.log",
+		"/C/Users/anonymous/Desktop/UECC-Windows-F222F71543C8C423901B60AC0D531F27_0000/CrashContext.runtime-xml",
+		"/C/Users/anonymous/Desktop/UECC-Windows-E281D174420F44F3E8B949A51C9DDCA6_0000/CrashContext.runtime-xml",
+		"/C/Users/anonymous/Desktop/UECC-Windows-08A3B4144A91CC9A36F4E29C88E6E683_0000/CrashContext.runtime-xml",
+		"/W/auth/1735433973204695442_loprofile.yml",
+		"/C/Users/anonymous/Downloads/delete_kraken_data.postman_collection",
+		"/W/oak2/OakGame/Saved/Logs/OakGame.log",
+		"/W/oak2/OakGame/Build/Tools/Deploy/GameLift/BuildMachineDeploy.ps1",
+		"/C/Users/anonymous/Downloads/OakGame.log",
+		"/C/Users/anonymous/Downloads/oakgame (1).log",
+		"/C/Users/anonymous/Downloads/CrashContext (2).runtime-xml",
+		"/C/Users/anonymous/Downloads/CrashContext.runtime-xml",
+		"/W/oak2/OakGame/Saved/StagedBuilds/Windows/OakGame/Saved/Logs/OakGame.log",
+		"/C/Users/anonymous/Downloads/cook_log_error.log",
+		"/C/Users/anonymous/AppData/LocalLow/Ludeon Studios/RimWorld by Ludeon Studios/Config/ModsConfig.xml",
+		"/W/oak2/Engine/Programs/AutomationTool/Saved/Logs/Cook-2022.09.06-13.32.08.txt",
+		"/C/Users/anonymous/Desktop/UECC-Windows-503300FF44CAD5783B1BDA87BD20B373_0000.xml",
+		"/W/oak2/Engine/Programs/AutomationTool/Saved/Logs/Log.txt",
+		"/C/Users/anonymous/Desktop/ProjectLauncher.log",
+		"/W/oak2/OakGame/Build/Tools/Deploy/GameLift/GearboxGameLift.psm1",
+		"/C/Games/Steam/steamapps/common/Kitten/OakGame/Saved/Logs/OakGame.log",
+		"/C/Users/anonymous/Desktop/UECC-Windows-326AA6C74952629FD28AB595936536BD_0000/CrashContext.runtime-xml",
+		"/C/Users/anonymous/Desktop/UECC-Windows-326AA6C74952629FD28AB595936536BD_0000/CrashReportClient.ini",
+		"/C/Users/anonymous/Desktop/CrashReportClient.ini",
+		"/W/oak2/OakGame/Build/Tools/Deploy/GameLift/StateOfTheBuild.ps1",
+		"/W/oak2/OakGame/Build/Tools/Deploy/GameLift/StateOfTheBuild-DevLauncher.ps1",
+		"/C/Users/anonymous/Desktop/Saved/Crashes/UECC-Windows-2BC96D134CCE9EB5EE794CAC2C4C2C0C_0000/CrashContext.runtime-xml",
+		"/W/oak2/OakGame/Build/Tools/Deploy/GameLift/DeployFreshFleets.ps1",
+		"/W/oak2/OakGame/Saved/Crashes/UECC-Windows-D588F6E24026516973CFF1A214045732_0000/CrashContext.runtime-xml",
+		"/C/Users/anonymous/Desktop/Saved/Crashes/UECC-Windows-3E5663744F6DBFC2514E0AA9047A9CF0_0000/CrashContext.runtime-xml",
+		"/C/Users/anonymous/Desktop/Saved/Logs/@32320/6E0837/OakGame.log",
+		"/C/Users/anonymous/Desktop/Saved/Logs/@32300/E231F1/OakGame.log",
+		"/C/Users/anonymous/Desktop/Saved/Crashes/UECC-Windows-F02488EF4E687ABBD4297D8A117FE383_0000/CrashContext.runtime-xml",
+		"/C/Users/anonymous/Desktop/Saved/Crashes/UECC-Windows-3E5663744F6DBFC2514E0AA9047A9CF0_0000/CrashReportClient.ini",
+		"/C/Users/anonymous/Desktop/Saved/Crashes/UECC-Windows-D8B9F860472C2E9F3BF423935A967A80_0000/UEMinidump.dmp",
+		"/C/Users/anonymous/AppData/Roaming/Unreal Engine/UnrealBuildTool/BuildConfiguration - Copy (2).xml",
+		"/C/Users/anonymous/AppData/Roaming/Unreal Engine/UnrealBuildTool/BuildConfiguration.xml",
+		"/W/oak2/SubmitAssistantProjectSettings.json",
+		"/W/auth/client_0_user_0.yml",
+		"/W/oak2/OakGame/Binaries/Win64/oneclient.cmd",
+		"/W/oak2/OakGame/Build/Tools/Deploy/GameLift/Overlays/Win64/OakGame/Binaries/Win64/cmd_h_1.txt",
+		"/W/tmp/test.ps1",
+		"/C/Users/anonymous/.okta-aws",
+		"/C/Users/anonymous/Documents/PowerShell/Profile.ps1",
+		"/W/oak2/OakGame/Build/Tools/Deploy/GameLift/DeployExample.ps1",
+		"/W/oak2/OakGame/Build/Tools/Deploy/GameLift/BuildManagementConfig.json"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"jotion",
+			"1",
+			"needCure",
+			"jaseLeftHand",
+			"jaseRightHand",
+			"jaseLeftHand",
+			"jaseRightHand",
+			"jaseCanDrinkPotion",
+			"mind ",
+			"mind you",
+			"reinf",
+			"25",
+			"reinforce",
+			",",
+			"Subject",
+			"xlockex",
+			"EF",
+			"1",
+			"Ctrl",
+			"True",
+			"1",
+			";",
+			"SendEvent",
+			"1",
+			"SendEvent",
+			"SendPlay",
+			"SendInput",
+			"Send",
+			"    ;Sleep",
+			"Sleep",
+			"30",
+			"Send",
+			"5",
+			"$",
+			"#",
+			"::",
+			"Send",
+			"$",
+			"+",
+			"LCtrl",
+			"Send",
+			"^",
+			"<",
+			"+",
+			"$",
+			"{Ctrl down}",
+			"{Ctrl ",
+			"DOWN",
+			"Control",
+			"SendInput",
+			"{Control DOWN}",
+			"Send ^",
+			"SendInput",
+			"^",
+			"^1",
+			" }",
+			"{ctrl down}",
+			"{ Send, ",
+			"Ctrl",
+			"$",
+			"1",
+			"cloud-d37e4f8f-2dc2-4d5a-8f1e-8d4793b53d2f",
+			"exit",
+			"cloud-d37e4f8f-2dc2-4d5a-8f1e-8d4793b53d2f",
+			"exit",
+			"32368",
+			" -HonchoURL=127.0.0.1:",
+			"travel",
+			"error",
+			"-rcpauto",
+			"?s_hit=local",
+			"-windowed",
+			"-log",
+			"-log ",
+			"-vaultpath=w:/auth",
+			"StressTestWorld",
+			"sjones",
+			"pearson",
+			"Login request",
+			"error",
+			"StressTest",
+			"error",
+			"travel",
+			"sjones",
+			"91e72d634003cfc5",
+			"stresstest",
+			"182fad686d57fbd5",
+			"pearson",
+			"91e72d634003cfc5",
+			"jones",
+			"stephen",
+			"182fad686d57fbd5",
+			"jared",
+			"stephen",
+			"jared",
+			"travel",
+			"stress",
+			"jared",
+			"travel",
+			"shift_1988972561531565107",
+			"experience",
+			"-Win64-Debug",
+			"start \"DEDICATED\" .\\OakGameServer-Win64-Debug.exe -ozone -vaultpath=w:/auth -rcpauto -log -addr=local -port=32310 -auth_file=shift-stable-ozone1.yaml -PostAuthTravel=BlocksWorld01_p?bUseIPSockets",
+			"people",
+			"☺",
+			"EngineVersion",
+			"OutArray",
+			"        OutArray.Add(",
+			"Flags |=",
+			"flag",
+			"flag =",
+			"\t\tflag = ",
+			"Ar.SerializeBits",
+			"\t\tAr <<",
+			"\tbool ",
+			"\tbool",
+			"\tbool ",
+			"\tfloat ",
+			"\tfloat",
+			"\tUPROPERTY()",
+			"honcho",
+			"cloud",
+			"poncho",
+			"cloud",
+			"GiveCommand",
+			"poncho",
+			"AGbxPoncho",
+			"Outgoing reliable buffer overflow"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\t",
+			"",
+			"_",
+			"",
+			"*/",
+			"/*"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "servuo_configs.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"test",
+				"W:\\tmp\\test.ps1"
+			],
+			[
+				"Build",
+				"W:\\oak2\\OakGame\\Build\\Tools\\Deploy\\GameLift\\BuildMachineDeploy.ps1"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
