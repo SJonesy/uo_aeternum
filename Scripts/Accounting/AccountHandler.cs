@@ -30,68 +30,10 @@ namespace Server.Misc
         private static readonly bool RestrictDeletion = Config.Get("Accounts.RestrictDeletion", !TestCenter.Enabled);
         private static readonly TimeSpan DeleteDelay = Config.Get("Accounts.DeleteDelay", TimeSpan.FromDays(7.0));
 
-        private static readonly CityInfo[] StartingCitiesT2A = new CityInfo[]
-        {
-            new CityInfo("New Haven",	"New Haven Bank",	1150168, 3503,	2574,	14, Map.Felucca),
-            new CityInfo("Yew", "The Empath Abbey",	1075072, 633,	858,	0, Map.Felucca),
-            new CityInfo("Minoc", "The Barnacle", 1075073, 2476,	413,	15, Map.Felucca),
-            new CityInfo("Britain",	"The Wayfarer's Inn",	1075074, 1602,	1591,	20, Map.Felucca),
-            new CityInfo("Moonglow",	"The Scholars Inn",	1075075, 4408,	1168,	0, Map.Felucca),
-            new CityInfo("Trinsic",	"The Traveler's Inn",	1075076, 1845,	2745,	0, Map.Felucca),
-            new CityInfo("Jhelom", "The Mercenary Inn",	1075078, 1374,	3826,	0, Map.Felucca),
-            new CityInfo("Skara Brae",	"The Falconer's Inn",	1075079, 618,	2234,	0, Map.Felucca),
-            new CityInfo("Vesper", "The Ironwood Inn",	1075080, 2771,	976,	0, Map.Felucca)
-        };
-
         private static readonly CityInfo[] StartingCities = new CityInfo[]
         {
-            new CityInfo("New Haven",	"New Haven Bank",	1150168, 3503,	2574,	14),
-            new CityInfo("Yew", "The Empath Abbey",	1075072, 633,	858,	0),
-            new CityInfo("Minoc", "The Barnacle", 1075073, 2476,	413,	15),
-            new CityInfo("Britain",	"The Wayfarer's Inn",	1075074, 1602,	1591,	20),
-            new CityInfo("Moonglow",	"The Scholars Inn",	1075075, 4408,	1168,	0),
-            new CityInfo("Trinsic",	"The Traveler's Inn",	1075076, 1845,	2745,	0),
-            new CityInfo("Jhelom", "The Mercenary Inn",	1075078, 1374,	3826,	0),
-            new CityInfo("Skara Brae",	"The Falconer's Inn",	1075079, 618,	2234,	0),
-            new CityInfo("Vesper", "The Ironwood Inn",	1075080, 2771,	976,	0)
+            new CityInfo("Moonglow", "", 1075075, 4408, 1168, 0)
         };
-
-        private static readonly CityInfo[] StartingCitiesSA = new CityInfo[]
-        {
-            new CityInfo("New Haven",	"New Haven Bank",	1150168, 3503,	2574,	14),
-            new CityInfo("Yew", "The Empath Abbey",	1075072, 633,	858,	0),
-            new CityInfo("Minoc", "The Barnacle", 1075073, 2476,	413,	15),
-            new CityInfo("Britain",	"The Wayfarer's Inn",	1075074, 1602,	1591,	20),
-            new CityInfo("Moonglow",	"The Scholars Inn",	1075075, 4408,	1168,	0),
-            new CityInfo("Trinsic",	"The Traveler's Inn",	1075076, 1845,	2745,	0),
-            new CityInfo("Jhelom", "The Mercenary Inn",	1075078, 1374,	3826,	0),
-            new CityInfo("Skara Brae",	"The Falconer's Inn",	1075079, 618,	2234,	0),
-            new CityInfo("Vesper", "The Ironwood Inn",	1075080, 2771,	976,	0),
-            new CityInfo("Royal City", "Royal City Inn", 1150169, 738, 3486, -19, Map.TerMur)
-        };
-
-        private static readonly CityInfo[] SiegeStartingCities = new CityInfo[]
-        {
-            new CityInfo("Britain",	"The Wayfarer's Inn",	1075074, 1602,	1591,	20, Map.Felucca),
-            new CityInfo("Royal City", "Royal City Inn", 1150169, 738, 3486, -19, Map.TerMur)
-        };
-
-        /* Old Haven/Magincia Locations
-        new CityInfo( "Britain", "Sweet Dreams Inn", 1496, 1628, 10 );
-        // ..
-        // Trinsic
-        new CityInfo( "Magincia", "The Great Horns Tavern", 3734, 2222, 20 ),
-        // Jhelom
-        // ..
-        new CityInfo( "Haven", "Buckler's Hideaway", 3667, 2625, 0 )
-
-        if ( Core.AOS )
-        {
-        //CityInfo haven = new CityInfo( "Haven", "Uzeraan's Mansion", 3618, 2591, 0 );
-        CityInfo haven = new CityInfo( "Haven", "Uzeraan's Mansion", 3503, 2574, 14 );
-        StartingCities[StartingCities.Length - 1] = haven;
-        }
-        */
 
 		private static readonly bool PasswordCommandEnabled = Config.Get("Accounts.PasswordCommandEnabled", false);
 
@@ -386,23 +328,7 @@ namespace Server.Misc
                 Utility.PopColor();
                 e.State.Account = acct;
                 e.Accepted = true;
-
-                if(Siege.SiegeShard)
-                {
-                    e.CityInfo = SiegeStartingCities;
-                }
-                else if (!Core.UOR)
-                {
-                    e.CityInfo = StartingCitiesT2A;
-                }
-                else if (!Core.SA)
-                {
-                    e.CityInfo = StartingCities;
-                }
-                else
-                {
-                    e.CityInfo = StartingCitiesSA;
-                }
+                e.CityInfo = StartingCities;
             }
 
             if (!e.Accepted)
