@@ -114,12 +114,6 @@ namespace Server.Misc
 			true, // Bushido = 52
 			true, //Ninjitsu = 53
 			true, // Spellweaving = 54
-
-			#region Stygian Abyss
-			true, // Mysticism = 55
-			true, // Imbuing = 56
-			false // Throwing = 57
-			#endregion
 		};
 
 		public static void Initialize()
@@ -152,8 +146,6 @@ namespace Server.Misc
 
 			var chance = (value - minSkill) / (maxSkill - minSkill);
 
-			CrystalBallOfKnowledge.TellSkillDifficulty(from, skillName, chance);
-
 			return CheckSkill(from, skill, new Point2D(from.Location.X / LocationSize, from.Location.Y / LocationSize), chance);
 		}
 
@@ -163,8 +155,6 @@ namespace Server.Misc
 
 			if (skill == null)
 				return false;
-
-			CrystalBallOfKnowledge.TellSkillDifficulty(from, skillName, chance);
 
 			if (chance < 0.0)
 				return false; // Too difficult
@@ -245,7 +235,9 @@ namespace Server.Misc
             var success = Utility.Random(100) <= (int)(chance * 100);
             var gc = GetGainChance(from, skill, chance, success);
 
-			if (AllowGain(from, skill, obj))
+            from.SendMessage("{0} skill gain chance: %{1:0.00}", skill.SkillName, gc);
+
+            if (AllowGain(from, skill, obj))
 			{
 				if (from.Alive && (skill.Base < 10.0 || Utility.RandomDouble() <= gc || CheckGGS(from, skill)))
 				{
@@ -305,8 +297,6 @@ namespace Server.Misc
 
 			var chance = (value - minSkill) / (maxSkill - minSkill);
 
-			CrystalBallOfKnowledge.TellSkillDifficulty(from, skillName, chance);
-
 			return CheckSkill(from, skill, target, chance);
 		}
 
@@ -316,8 +306,6 @@ namespace Server.Misc
 
 			if (skill == null)
 				return false;
-
-			CrystalBallOfKnowledge.TellSkillDifficulty(from, skillName, chance);
 
 			if (chance < 0.0)
 				return false; // Too difficult
@@ -400,24 +388,6 @@ namespace Server.Misc
 				if (toGain == 1 && skill.Base <= 10.0)
 					toGain = Utility.Random(4) + 1;
 
-				#region Mondain's Legacy
-				if (from is PlayerMobile && QuestHelper.EnhancedSkill((PlayerMobile)from, skill))
-				{
-					toGain *= Utility.RandomMinMax(2, 4);
-				}
-				#endregion
-
-				#region Scroll of Alacrity
-				if (from is PlayerMobile && skill.SkillName == ((PlayerMobile)from).AcceleratedSkill &&
-					((PlayerMobile)from).AcceleratedStart > DateTime.UtcNow)
-				{
-					// You are infused with intense energy. You are under the effects of an accelerated skillgain scroll.
-					((PlayerMobile)from).SendLocalizedMessage(1077956);
-
-					toGain = Utility.RandomMinMax(2, 5);
-				}
-				#endregion
-
 				#region Skill Masteries
 				else if (from is BaseCreature && !(from is Server.Engines.Despise.DespiseCreature) && (((BaseCreature)from).Controlled || ((BaseCreature)from).Summoned))
 				{
@@ -452,32 +422,17 @@ namespace Server.Misc
 				}
 			}
 
-			#region Mondain's Legacy
-			if (from is PlayerMobile)
-				QuestHelper.CheckSkill((PlayerMobile)from, skill);
-			#endregion
-
-			if (skill.Lock == SkillLock.Up &&
-				(!Siege.SiegeShard || !(from is PlayerMobile) || Siege.CanGainStat((PlayerMobile)from)))
+			if (skill.Lock == SkillLock.Up && !(from is PlayerMobile))
 			{
 				var info = skill.Info;
+				var scalar = 1.0;
 
-				// Old gain mechanic
-				if (!Core.ML)
-				{
-					var scalar = 1.0;
-
-					if (from.StrLock == StatLockType.Up && (info.StrGain / 33.3) * scalar > Utility.RandomDouble())
-						GainStat(from, Stat.Str);
-					else if (from.DexLock == StatLockType.Up && (info.DexGain / 33.3) * scalar > Utility.RandomDouble())
-						GainStat(from, Stat.Dex);
-					else if (from.IntLock == StatLockType.Up && (info.IntGain / 33.3) * scalar > Utility.RandomDouble())
-						GainStat(from, Stat.Int);
-				}
-				else
-				{
-					TryStatGain(info, from);
-				}
+				if (from.StrLock == StatLockType.Up && (info.StrGain / 33.3) * scalar > Utility.RandomDouble())
+					GainStat(from, Stat.Str);
+				else if (from.DexLock == StatLockType.Up && (info.DexGain / 33.3) * scalar > Utility.RandomDouble())
+					GainStat(from, Stat.Dex);
+				else if (from.IntLock == StatLockType.Up && (info.IntGain / 33.3) * scalar > Utility.RandomDouble())
+					GainStat(from, Stat.Int);
 			}
 		}
 
@@ -493,73 +448,6 @@ namespace Server.Misc
 						break;
 					}
 				}
-			}
-		}
-
-		public static void TryStatGain(SkillInfo info, Mobile from)
-		{
-			// Chance roll
-			double chance;
-
-            if (from is BaseCreature && ((BaseCreature)from).Controlled)
-            {
-                chance = _PetChanceToGainStats / 100.0;
-            }
-            else
-            {
-                chance = _PlayerChanceToGainStats / 100.0;
-            }
-
-			if (Utility.RandomDouble() >= chance)
-			{
-				return;
-			}
-
-			// Selection
-			var primaryLock = StatLockType.Locked;
-			var secondaryLock = StatLockType.Locked;
-
-			switch (info.Primary)
-			{
-				case StatCode.Str:
-					primaryLock = from.StrLock;
-					break;
-				case StatCode.Dex:
-					primaryLock = from.DexLock;
-					break;
-				case StatCode.Int:
-					primaryLock = from.IntLock;
-					break;
-			}
-
-			switch (info.Secondary)
-			{
-				case StatCode.Str:
-					secondaryLock = from.StrLock;
-					break;
-				case StatCode.Dex:
-					secondaryLock = from.DexLock;
-					break;
-				case StatCode.Int:
-					secondaryLock = from.IntLock;
-					break;
-			}
-
-			// Gain
-			// Decision block of both are selected to gain
-			if (primaryLock == StatLockType.Up && secondaryLock == StatLockType.Up)
-			{
-				if (Utility.Random(4) == 0)
-					GainStat(from, (Stat)info.Secondary);
-				else
-					GainStat(from, (Stat)info.Primary);
-			}
-			else // Will not do anything if neither are selected to gain
-			{
-				if (primaryLock == StatLockType.Up)
-					GainStat(from, (Stat)info.Primary);
-				else if (secondaryLock == StatLockType.Up)
-					GainStat(from, (Stat)info.Secondary);
 			}
 		}
 

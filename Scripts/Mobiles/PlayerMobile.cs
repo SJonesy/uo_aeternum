@@ -707,22 +707,6 @@ namespace Server.Mobiles
 				return false;
 			}
 
-			if (Core.AOS)
-			{
-				IPooledEnumerable mobiles = Map.GetMobilesInRange(location, 0);
-
-				foreach (Mobile m in mobiles)
-				{
-					if (m.Z >= location.Z && m.Z < location.Z + 16)
-					{
-						mobiles.Free();
-						return false;
-					}
-				}
-
-				mobiles.Free();
-			}
-
 			BounceInfo bi = item.GetBounce();
 
 			if (bi != null && (!Core.SA || AccessLevel > AccessLevel.Counselor))
@@ -1083,17 +1067,6 @@ namespace Server.Mobiles
 
 		protected override void OnRaceChange(Race oldRace)
 		{
-            if (oldRace == Race.Gargoyle && Flying)
-            {
-                Flying = false;
-                SendSpeedControl(SpeedControlType.Disable);
-                BuffInfo.RemoveBuff(this, BuffIcon.Fly);
-            }
-            else if (oldRace != Race.Gargoyle && Race == Race.Gargoyle && Mounted)
-            {
-                Mount.Rider = null;
-            }
-
 			ValidateEquipment();
 			UpdateResistances();
 		}
@@ -1969,13 +1942,6 @@ namespace Server.Mobiles
 					{
 						strOffs += 20;
 					}
-
-                    // Skill Masteries
-                    if (Core.TOL)
-                    {
-                        strOffs += ToughnessSpell.GetHPBonus(this);
-                        strOffs += InvigorateSpell.GetHPBonus(this);
-                    }
 				}
 				else
 				{
@@ -5354,21 +5320,6 @@ namespace Server.Mobiles
 					}
 				}
 			}
-
-            if (TestCenter.Enabled && Core.TOL)
-            {
-                Server.Engines.VvV.VvVPlayerEntry entry = Server.Engines.Points.PointsSystem.ViceVsVirtue.GetPlayerEntry<Server.Engines.VvV.VvVPlayerEntry>(this);
-
-                list.Add(String.Format("Kills: {0} / Deaths: {1} / Assists: {2}", // no cliloc for this!
-                    entry == null ? "0" : entry.Kills.ToString(), entry == null ? "0" : entry.Deaths.ToString(), entry == null ? "0" : entry.Assists.ToString()));
-
-                list.Add(1060415, AosAttributes.GetValue(this, AosAttribute.AttackChance).ToString()); // hit chance increase ~1_val~%
-                list.Add(1060408, AosAttributes.GetValue(this, AosAttribute.DefendChance).ToString()); // defense chance increase ~1_val~%
-                list.Add(1060486, AosAttributes.GetValue(this, AosAttribute.WeaponSpeed).ToString()); // swing speed increase ~1_val~%
-                list.Add(1060401, AosAttributes.GetValue(this, AosAttribute.WeaponDamage).ToString()); // damage increase ~1_val~%
-                list.Add(1060483, AosAttributes.GetValue(this, AosAttribute.SpellDamage).ToString()); // spell damage increase ~1_val~%
-                list.Add(1060433, AosAttributes.GetValue(this, AosAttribute.LowerManaCost).ToString()); // lower mana cost
-            }
 
 			if (PlayerProperties != null)
 			{
