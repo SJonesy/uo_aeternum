@@ -235,7 +235,7 @@ namespace Server.Misc
             var success = Utility.Random(100) <= (int)(chance * 100);
             var gc = GetGainChance(from, skill, chance, success);
 
-            from.SendMessage("{0} skill gain chance: %{1:0.00}", skill.SkillName, gc);
+            from.SendMessage("{0} skill gain chance: %{1:0.00}", skill.SkillName, gc*100);
 
             if (AllowGain(from, skill, obj))
 			{
@@ -318,19 +318,8 @@ namespace Server.Misc
 
 		private static bool AllowGain(Mobile from, Skill skill, object obj)
 		{
-			if (Core.AOS && Faction.InSkillLoss(from)) //Changed some time between the introduction of AoS and SE.
-				return false;
-
 			if (from is PlayerMobile)
 			{
-				#region SA
-				if (skill.Info.SkillID == (int)SkillName.Archery && from.Race == Race.Gargoyle)
-					return false;
-
-				if (skill.Info.SkillID == (int)SkillName.Throwing && @from.Race != Race.Gargoyle)
-					return false;
-				#endregion
-
 				if (_AntiMacroCode && UseAntiMacro[skill.Info.SkillID])
 					return ((PlayerMobile)from).AntiMacroCheck(skill, obj);
 			}
@@ -365,46 +354,8 @@ namespace Server.Misc
 			{
 				var skills = from.Skills;
 
-				if (from is PlayerMobile && Siege.SiegeShard)
-				{
-					var minsPerGain = Siege.MinutesPerGain(from, skill);
-
-					if (minsPerGain > 0)
-					{
-						if (Siege.CheckSkillGain((PlayerMobile)from, minsPerGain, skill))
-						{
-							CheckReduceSkill(skills, toGain, skill);
-
-							if (skills.Total + toGain <= skills.Cap)
-							{
-								skill.BaseFixedPoint += toGain;
-							}
-						}
-
-						return;
-					}
-				}
-
 				if (toGain == 1 && skill.Base <= 10.0)
 					toGain = Utility.Random(4) + 1;
-
-				#region Skill Masteries
-				else if (from is BaseCreature && !(from is Server.Engines.Despise.DespiseCreature) && (((BaseCreature)from).Controlled || ((BaseCreature)from).Summoned))
-				{
-					var master = ((BaseCreature)from).GetMaster();
-
-					if (master != null)
-					{
-						var spell = SkillMasterySpell.GetSpell(master, typeof(WhisperingSpell)) as WhisperingSpell;
-
-						if (spell != null && master.InRange(from.Location, spell.PartyRange) && master.Map == from.Map &&
-							spell.EnhancedGainChance >= Utility.Random(100))
-						{
-							toGain = Utility.RandomMinMax(2, 5);
-						}
-					}
-				}
-				#endregion
 
 				if (from is PlayerMobile)
 				{

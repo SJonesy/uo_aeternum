@@ -75,10 +75,7 @@ namespace Server.Spells.Fourth
                 int itemID = eastToWest ? 0x398C : 0x3996;
                 TimeSpan duration;
 
-                if (Core.AOS)
-                    duration = TimeSpan.FromSeconds((15 + (Caster.Skills.Magery.Fixed / 5)) / 4);
-                else
-                    duration = TimeSpan.FromSeconds(4.0 + (Caster.Skills[SkillName.Magery].Value * 0.5));
+                duration = TimeSpan.FromSeconds(4.0 + (Caster.Skills[SkillName.Magery].Value * 0.5));
 
                 Point3D pnt = new Point3D(p);
 
@@ -210,7 +207,7 @@ namespace Server.Spells.Fourth
 
             public override bool OnMoveOver(Mobile m)
             {
-                if (Visible && m_Caster != null && (!Core.AOS || m != m_Caster) && SpellHelper.ValidIndirectTarget(m_Caster, m) && m_Caster.CanBeHarmful(m, false))
+                if (Visible && m_Caster != null && SpellHelper.ValidIndirectTarget(m_Caster, m) && m_Caster.CanBeHarmful(m, false))
                 {
                     if (SpellHelper.CanRevealCaster(m))
                         m_Caster.RevealingAction();
@@ -219,7 +216,7 @@ namespace Server.Spells.Fourth
 
                     int damage = m_Damage;
 
-                    if (!Core.AOS && m.CheckSkill(SkillName.MagicResist, 0.0, 30.0))
+                    if (m.CheckSkill(SkillName.MagicResist, 0.0, 60.0))
                     {
                         damage = 1;
 

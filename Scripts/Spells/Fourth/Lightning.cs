@@ -53,11 +53,7 @@ namespace Server.Spells.Fourth
 
                 double damage = 0;
 
-                if (Core.AOS)
-                {
-                    damage = GetNewAosDamage(23, 1, 4, m);
-                }
-                else if (mob != null)
+                if (mob != null)
                 {
                     damage = Utility.Random(12, 9);
 
