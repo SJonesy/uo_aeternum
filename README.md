@@ -3,7 +3,7 @@
 ## In Development Features
 
 ### Seasonality
-- While accounts will persist, all items, characters, and houses will be wiped regularly (ever 3-4 months?).
+- While accounts will persist, all items, characters, and houses will be wiped regularly (every 3-4 months?).
 - Accounts will earn permanent cosmetic unlocks from gaining achievements during a season.
 - The server is being designed from the ground up to make starting over as interesting as possible.
 - A large number of [tweakable seasonal settings](https://github.com/SJonesy/uo_aeternum/blob/main/Config/Seasonal.cfg) make each season feel different, while maintaining the beloved core T2A mountless gameplay.
