@@ -1,4 +1,4 @@
-# UO Aeternum: A seasonl T2A-style mountless server.
+# UO Aeternum: A seasonal T2A-style mountless server.
 
 ## In Development Features
 
