@@ -58,7 +58,8 @@ namespace Server.Items
 			: base(serial)
 		{ }
 
-		public override TimeSpan OnSwing(Mobile attacker, IDamageable damageable)
+        // TODO rabbi distance based archery damage
+        public override TimeSpan OnSwing(Mobile attacker, IDamageable damageable)
 		{
             long nextShoot;
 
@@ -218,6 +219,7 @@ namespace Server.Items
 				}
 			}
 
+            // TODO rabbi distance based archery damage
             attacker.MovingEffect(damageable, EffectID, 18, 1, false, false);
 
 			return true;

@@ -50,20 +50,16 @@ namespace Server.Spells.Sixth
 
                 if (SpellHelper.CheckReflect((int)Circle, ref source, ref target))
                 {
-                    Timer.DelayCall(TimeSpan.FromSeconds(.5), () =>
+                    Timer.DelayCall(TimeSpan.FromSeconds(1.0), () =>
                     {
-                        source.MovingParticles(target, 0x379F, 7, 0, false, true, 3043, 4043, 0x211);
+                        source.MovingParticles(target, 0x379F, 7, 3, false, true, 3043, 4043, 0x211);
                         source.PlaySound(0x20A);
                     });
                 }
 
                 double damage = 0;
 
-                if (Core.AOS)
-                {
-                    damage = GetNewAosDamage(40, 1, 5, m);
-                }
-                else if (m is Mobile)
+                if (m is Mobile)
                 {
                     Mobile mob = m as Mobile;
                     damage = Utility.Random(24, 18);
@@ -80,7 +76,7 @@ namespace Server.Spells.Sixth
                 }
 
                 // Do the effects
-                Caster.MovingParticles(m, 0x379F, 7, 0, false, true, 3043, 4043, 0x211);
+                Caster.MovingParticles(m, 0x379F, 7, 3, false, true, 3043, 4043, 0x211);
                 Caster.PlaySound(0x20A);
 
                 if (damage > 0)
@@ -97,7 +93,7 @@ namespace Server.Spells.Sixth
         {
             private readonly EnergyBoltSpell m_Owner;
             public InternalTarget(EnergyBoltSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(12, false, TargetFlags.Harmful)
             {
                 m_Owner = owner;
             }

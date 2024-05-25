@@ -29,6 +29,24 @@
 - House NPCs/Addons: TBD, most likely there will be NPCs/Addons to help you gain skills and also to make houses near farming spots stronger (res stone? free reags in house? free gate from house to town? bank deposit?)
 
 
-
 ## Complete Features
 - Heh
+
+### Seasonality
+
+### Achievements
+
+### Murderer System
+
+### Early Cash Pressure
+
+
+## Misc Thoughts as I have them
+- No hostile murderer magic on Moonglow island; it's protected by the council of mages
+- NPCs that only murderers can farm that are very good cash. A town of citizens that are mobs. The idea being that reds can be actively hunted because they'll be farming, so whatever this ends up being make travel in and out limited. 
+- Think of other ways to make playing a red feel more like a lifestyle choice-- shops that only murderers can use? NPCs that only murderers can hire? Obviously reds will always be an alt of someone with a blue, but the idea is that some guilds/individuals will spend the majority of their time on a red.
+- Secure place to trade kinda like Shelter Island on Outlands. Maybe a hub for all instanced content.
+- "Focus" skill lets you meditate through armor? Plate mage builds are really cool..
+- PvP Event: first team to either "capture a flag" or kill 33% of the enemy team wins the round, best of 3 or 5. Flag spawns after 2 minutes. Mounted versions of this event are the only time mounts are available on the server.
+- 3 faction PvP system, Order/Chaos/Balance. Old School parry mages, and find a custom shield for the balance faction.
+- PvE class based system. Wearable/tradeable/lootable items that give you a set of "class" powers. These don't overwrite your existing template, so class + skills creates a large variety of PvE options.

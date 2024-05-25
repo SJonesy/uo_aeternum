@@ -27,7 +27,7 @@ namespace Server.Spells.Sixth
         {
             get
             {
-                return !Core.AOS;
+                return true;
             }
         }
         public override bool DelayedDamage

@@ -134,25 +134,19 @@ namespace Server.Spells
                 sdiBonus -= Block.GetSpellReduction(target);
             }
 
-            // PvP spell damage increase cap of 15% from an item’s magic property, 30% if spell school focused.
-            if (Core.SE && playerVsPlayer)
-            {
-                sdiBonus = Math.Min(sdiBonus, PvPSpellDamageCap(caster, skill));
-            }
-
             return sdiBonus;
         }
         #endregion 
 
-        private static readonly TimeSpan AosDamageDelay = TimeSpan.FromSeconds(1.0);
-        private static readonly TimeSpan OldDamageDelay = TimeSpan.FromSeconds(0.5);
+        // TODO rabbi this needs to come from a settings file and be configurable per spell
+        private static readonly TimeSpan OldDamageDelay = TimeSpan.FromSeconds(.5);
 
         public static TimeSpan GetDamageDelayForSpell(Spell sp)
         {
             if (!sp.DelayedDamage)
                 return TimeSpan.Zero;
 
-            return (Core.AOS ? AosDamageDelay : OldDamageDelay);
+            return (OldDamageDelay);
         }
 
         public static bool CheckMulti(Point3D p, Map map)

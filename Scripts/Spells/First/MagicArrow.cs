@@ -26,7 +26,7 @@ namespace Server.Spells.First
         {
             get
             {
-                return !Core.AOS;
+                return true;
             }
         }
         public override bool DelayedDamage

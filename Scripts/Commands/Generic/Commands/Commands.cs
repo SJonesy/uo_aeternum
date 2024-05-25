@@ -468,7 +468,8 @@ namespace Server.Commands.Generic
 	{
 		public AddCommand()
 		{
-			AccessLevel = AccessLevel.GameMaster;
+            // TODO rabbi you must fix this before launch
+			AccessLevel = AccessLevel.Player;
 			Supports = CommandSupport.Simple | CommandSupport.Self;
 			Commands = new[] {"Add"};
 			ObjectTypes = ObjectTypes.All;

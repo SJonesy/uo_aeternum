@@ -981,11 +981,6 @@ namespace Server.Spells
 
 		public virtual TimeSpan GetDisturbRecovery()
 		{
-			if (Core.AOS)
-			{
-				return TimeSpan.Zero;
-			}
-
 			double delay = 1.0 - Math.Sqrt((Core.TickCount - m_StartCastTime) / 1000.0 / GetCastDelay().TotalSeconds);
 
 			if (delay < 0.2)
@@ -1003,23 +998,7 @@ namespace Server.Spells
 
 		public virtual TimeSpan GetCastRecovery()
 		{
-			if (!Core.AOS)
-			{
-				return NextSpellDelay;
-			}
-
-			int fcr = AosAttributes.GetValue(m_Caster, AosAttribute.CastRecovery);
-
-			int fcrDelay = -(CastRecoveryFastScalar * fcr);
-
-			int delay = CastRecoveryBase + fcrDelay;
-
-			if (delay < CastRecoveryMinimum)
-			{
-				delay = CastRecoveryMinimum;
-			}
-
-			return TimeSpan.FromSeconds((double)delay / CastRecoveryPerSecond);
+			return NextSpellDelay;
 		}
 
 		public abstract TimeSpan CastDelayBase { get; }

@@ -51,7 +51,7 @@ namespace Server.Spells.Third
                 {
                     Timer.DelayCall(TimeSpan.FromSeconds(.5), () =>
                         {
-                            source.MovingParticles(target, 0x36D4, 7, 0, false, true, 9502, 4019, 0x160);
+                            source.MovingParticles(target, 0x36D4, 7, 5, false, true, 9502, 4019, 0x160);
                             source.PlaySound(Core.AOS ? 0x15E : 0x44B);
                         });
                 }
@@ -78,7 +78,7 @@ namespace Server.Spells.Third
 
                 if (damage > 0)
                 {
-                    Caster.MovingParticles(m, 0x36D4, 7, 0, false, true, 9502, 4019, 0x160);
+                    Caster.MovingParticles(m, 0x36D4, 7, 5, false, true, 9502, 4019, 0x160);
                     Caster.PlaySound(Core.AOS ? 0x15E : 0x44B);
 
                     SpellHelper.Damage(this, target, damage, 0, 100, 0, 0, 0);

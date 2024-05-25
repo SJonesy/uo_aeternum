@@ -41,3 +41,5 @@
 
 !/Data/*
 !/bin/rosyln/*
+
+*.subllime-*

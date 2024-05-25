@@ -28,7 +28,7 @@ namespace Server.Spells.Fourth
         {
             get
             {
-                return false;
+                return true;
             }
         }
         public override void OnCast()
