@@ -232,14 +232,17 @@ namespace Server.Misc
 			if (from.Skills.Cap == 0)
 				return false;
 
+            if (skill.Base == skill.Cap)
+                return false;
+
             var success = Utility.Random(100) <= (int)(chance * 100);
             var gc = GetGainChance(from, skill, chance, success);
 
-            from.SendMessage("{0} skill gain chance: %{1:0.00}", skill.SkillName, gc*100);
-
             if (AllowGain(from, skill, obj))
 			{
-				if (from.Alive && (skill.Base < 10.0 || Utility.RandomDouble() <= gc || CheckGGS(from, skill)))
+                from.SendMessage("{0} skill gain chance: %{1:0.00}", skill.SkillName, gc * 100);
+
+                if (from.Alive && (skill.Base < 10.0 || Utility.RandomDouble() <= gc || CheckGGS(from, skill)))
 				{
 					Gain(from, skill);
 				}

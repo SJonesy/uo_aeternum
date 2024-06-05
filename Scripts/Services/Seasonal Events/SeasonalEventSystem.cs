@@ -62,6 +62,7 @@ namespace Server.Engines.SeasonalEvents
         {
             Entries = new List<SeasonalEventEntry>();
 
+            /*
             Entries.Add(new SeasonalEventEntry(EventType.TreasuresOfTokuno,     "Treasures of Tokuno",  EventStatus.Inactive));
             Entries.Add(new SeasonalEventEntry(EventType.VirtueArtifacts,       "Virtue Artifacts",     EventStatus.Active));
             Entries.Add(new SeasonalEventEntry(EventType.TreasuresOfKotlCity,   "Treasures of Kotl",    EventStatus.Inactive,   10, 1, 60));
@@ -71,6 +72,7 @@ namespace Server.Engines.SeasonalEvents
             Entries.Add(new SeasonalEventEntry(EventType.KrampusEncounter,      "Krampus Encounter",    EventStatus.Seasonal,   12, 1, 60));
             Entries.Add(new SeasonalEventEntry(EventType.RisingTide,            "Rising Tide",          EventStatus.Active));
             Entries.Add(new SeasonalEventEntry(EventType.Fellowship,            "Fellowship",           EventStatus.Inactive));
+            */
         }
 
         [Usage("SeasonSystemGump")]

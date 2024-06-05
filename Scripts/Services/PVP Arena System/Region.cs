@@ -1,21 +1,14 @@
-using Server;
 using System;
-using System.Collections.Generic;
 using Server.Items;
 using Server.Mobiles;
 using Server.Regions;
 using Server.Spells;
-using Server.Spells.Eighth;
 using Server.Spells.Seventh;
 using Server.Spells.Sixth;
 using Server.Spells.Fifth;
 using Server.Spells.Fourth;
 using Server.Spells.Third;
-using Server.Spells.Mysticism;
-using Server.Spells.Spellweaving;
-using Server.Spells.Necromancy;
-using Server.Spells.Ninjitsu;
-using Server.Targeting;
+
 
 namespace Server.Engines.ArenaSystem
 {

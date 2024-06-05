@@ -16,8 +16,6 @@ using Server.Spells.Ninjitsu;
 using Server.Spells.Seventh;
 using Server.Spells.Fourth;
 using Server.Targeting;
-using Server.Spells.SkillMasteries;
-using Server.Spells.Spellweaving;
 
 namespace Server
 {

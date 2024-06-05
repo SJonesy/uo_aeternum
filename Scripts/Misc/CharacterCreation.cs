@@ -204,9 +204,9 @@ namespace Server.Misc
 				TestCenter.FillBankbox(newChar);
 
 			var city = args.City;
-			var map = Map.Felucca;
+            city.Map = Map.Felucca;
 
-            newChar.MoveToWorld(city.Location, map);
+            newChar.MoveToWorld(city.Location, city.Map);
 
 			Utility.PushColor(ConsoleColor.Green);
 			Console.WriteLine("Login: {0}: New character being created (account={1})", state, args.Account.Username);
