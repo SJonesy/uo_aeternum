@@ -101,18 +101,6 @@ namespace Server.Items
 
             AddButton(10, 40, 4005, 4007, 1, GumpButtonType.Reply, 0);
             AddHtmlLocalized(45, 40, 200, 20, 1060390, LabelColor, false, false); // Classic Houses
-
-            AddButton(10, 60, 4005, 4007, 2, GumpButtonType.Reply, 0);
-            AddHtmlLocalized(45, 60, 200, 20, 1060391, LabelColor, false, false); // 2-Story Customizable Houses
-
-            AddButton(10, 80, 4005, 4007, 3, GumpButtonType.Reply, 0);
-            AddHtmlLocalized(45, 80, 200, 20, 1060392, LabelColor, false, false); // 3-Story Customizable Houses
-
-            if (m_Tool.UseCustomHousePlots || from.AccessLevel > AccessLevel.Player)
-            {
-                AddButton(10, 100, 4005, 4007, 4, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(45, 100, 200, 20, 1158540, LabelColor, false, false); // Custom House Contest
-            }
         }
 
         public override void OnResponse(Server.Network.NetState sender, RelayInfo info)
@@ -123,28 +111,10 @@ namespace Server.Items
             switch ( info.ButtonID )
             {
                 case 1: // Classic Houses
-                    {
-                        m_From.SendGump(new HousePlacementListGump(m_Tool, m_From, Core.EJ ? HousePlacementEntry.HousesEJ : HousePlacementEntry.ClassicHouses, true));
-                        break;
-                    }
-                case 2: // 2-Story Customizable Houses
-                    {
-                        m_From.SendGump(new HousePlacementListGump(m_Tool, m_From, HousePlacementEntry.TwoStoryFoundations));
-                        break;
-                    }
-                case 3: // 3-Story Customizable Houses
-                    {
-                        m_From.SendGump(new HousePlacementListGump(m_Tool, m_From, HousePlacementEntry.ThreeStoryFoundations));
-                        break;
-                    }
-                case 4: // Custom House Contest
-                    {
-                        if (m_Tool.UseCustomHousePlots || m_From.AccessLevel > AccessLevel.Player)
-                        {
-                            m_From.SendGump(new HousePlacementListGump(m_Tool, m_From, HousePlacementEntry.CustomHouseContest));
-                        }
-                        break;
-                    }
+                {
+                    m_From.SendGump(new HousePlacementListGump(m_Tool, m_From, Core.EJ ? HousePlacementEntry.HousesEJ : HousePlacementEntry.ClassicHouses, true));
+                    break;
+                }
             }
         }
     }
@@ -318,26 +288,17 @@ namespace Server.Items
 
             IPoint3D ip = o as IPoint3D;
 
-            if (ip != null)
-            {
-                if (ip is Item)
-                    ip = ((Item)ip).GetWorldTop();
+            if (ip == null)
+                return;
 
-                Point3D p = new Point3D(ip);
+            if (ip is Item)
+                ip = ((Item)ip).GetWorldTop();
 
-                Region reg = Region.Find(new Point3D(p), from.Map);
+            Point3D p = new Point3D(ip);
 
-                if (from.AccessLevel >= AccessLevel.GameMaster || reg.AllowHousing(from, p))
-                    m_Placed = m_Entry.OnPlacement(m_Tool, from, p);
-                else if (reg.IsPartOf<TempNoHousingRegion>())
-                    from.SendLocalizedMessage(501270); // Lord British has decreed a 'no build' period, thus you cannot build this house at this time.
-                else if (reg.IsPartOf<TreasureRegion>() || reg.IsPartOf<HouseRegion>())
-                    from.SendLocalizedMessage(1043287); // The house could not be created here.  Either something is blocking the house, or the house would not be on valid terrain.
-                else if (reg.IsPartOf<HouseRaffleRegion>())
-                    from.SendLocalizedMessage(1150493); // You must have a deed for this plot of land in order to build here.
-                else
-                    from.SendLocalizedMessage(501265); // Housing can not be created in this area.
-            }
+            Region reg = Region.Find(new Point3D(p), from.Map);
+
+            from.SendLocalizedMessage(501265); // Housing can not be created in this area.
         }
 
         protected override void OnTargetFinish(Mobile from)

@@ -66,14 +66,7 @@ namespace Server.Regions
 		{
 			get
 			{
-				if (Map == Map.Ilshenar || Map == Map.Malas)
-				{
-					return typeof(ArcherGuard);
-				}
-				else
-				{
-					return typeof(WarriorGuard);
-				}
+				return typeof(WarriorGuard);
 			}
 		}
 

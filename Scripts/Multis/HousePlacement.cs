@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Server.Regions;
 using Server.Spells;
 using Server.Mobiles;
+using System.Diagnostics;
 
 namespace Server.Multis
 {
@@ -52,29 +53,19 @@ namespace Server.Multis
             if (from.AccessLevel >= AccessLevel.GameMaster)
                 return HousePlacementResult.Valid; // Staff can place anywhere
 
-            if (map == Map.Ilshenar || SpellHelper.IsFeluccaT2A(map, center) || SpellHelper.IsEodon(map, center))
-                return HousePlacementResult.BadRegion; // No houses in Ilshenar/T2A/Eodon
-
-            if (map == Map.Malas && (multiID == 0x007C || multiID == 0x007E))
-                return HousePlacementResult.InvalidCastleKeep;
-
-            #region SA
-            if (map == Map.TerMur && !Server.Engines.Points.PointsSystem.QueensLoyalty.IsNoble(from))
-            {
-                return HousePlacementResult.NoQueenLoyalty;
-            }
-            #endregion
-
             var noHousingRegion = (NoHousingRegion)Region.Find(center, map).GetRegion(typeof(NoHousingRegion));
-
             if (noHousingRegion != null)
                 return HousePlacementResult.BadRegion;
 
+            // Housing can only be placed in Guild Towns
+            var guildTownRegion = (GuildTownRegion)Region.Find(center, map).GetRegion(typeof(GuildTownRegion));
+            if (guildTownRegion == null)
+            {
+                return HousePlacementResult.BadRegion;
+            }
+
             // This holds data describing the internal structure of the house
             MultiComponentList mcl = MultiData.GetComponents(multiID);
-
-            if (multiID >= 0x13EC && multiID < 0x1D00)
-                HouseFoundation.AddStairsTo(ref mcl); // this is a AOS house, add the stairs
 
             // Location of the nortwest-most corner of the house
             Point3D start = new Point3D(center.X + mcl.Min.X, center.Y + mcl.Min.Y, center.Z);

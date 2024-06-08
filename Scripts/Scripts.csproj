@@ -860,6 +860,10 @@
     <Compile Include="Mobiles\NPCs\Mannequin\Property\SkillBonusAttribute.cs" />
     <Compile Include="Mobiles\NPCs\Mannequin\Property\SlayerAttribute.cs" />
     <Compile Include="Mobiles\NPCs\Mannequin\Property\WeaponAttributeProperty.cs" />
+    <Compile Include="Regions\GuildTownRegion.cs" />
+    <Compile Include="Regions\NoHousingRegion.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Services\Expansions\High Seas\Multis\GalleonItem.cs" />
     <Compile Include="Services\Seasonal Events\ForsakenFoes\Mobile\MiningCooperativeMerchant.cs" />
     <Compile Include="Mobiles\NPCs\CommissionPlayerVendor.cs" />
@@ -9047,9 +9051,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Regions\MondainRegion.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Regions\NoHousingRegion.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Regions\Spawning\SpawnDefinition.cs">
