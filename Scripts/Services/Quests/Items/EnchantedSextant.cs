@@ -92,36 +92,9 @@ namespace Server.Items
 
             Point2D[] banks;
             PMList moongates;
-            if (from.Map == Map.Trammel)
-            {
-                banks = m_TrammelBanks;
-                moongates = PMList.Trammel;
-            }
-            else if (from.Map == Map.Felucca)
-            {
-                banks = m_FeluccaBanks;
-                moongates = PMList.Felucca;
-            }
-            else if (from.Map == Map.Ilshenar)
-            {
-                #if false
-				banks = m_IlshenarBanks;
-				moongates = PMList.Ilshenar;
-                #else
-                from.Send(new MessageLocalized(this.Serial, this.ItemID, MessageType.Label, 0x482, 3, 1061684, "", "")); // The magic of the sextant fails...
-                return;
-                #endif
-            }
-            else if (from.Map == Map.Malas)
-            {
-                banks = m_MalasBanks;
-                moongates = PMList.Malas;
-            }
-            else
-            {
-                banks = null;
-                moongates = null;
-            }
+
+            banks = m_FeluccaBanks;
+            moongates = PMList.Felucca;
 
             Point3D closestMoongate = Point3D.Zero;
             double moongateDistance = double.MaxValue;
