@@ -13,7 +13,7 @@
       - After an hour, the Banestone disappears and the town is no longer vulnerable.
    - When a Tree of Life dies, all housing collapses, decorations are destroyed, and NPCs are despawned.
    - Whoever placed the "Banestone" receives a check in their bank box equal to the price of the banestone plus a portion of the value of the town.
-- Towns come with lots of benefits. Examples:
+- Towns come with lots of benefits that scale with the value of the town. Examples:
    - Every week, there is a zero-sum roll between all towns where a single town's members will all receive a cosmetic unlock.
    - Daily permanent account cosmetics unlock chance NPCs.
    - Discounted reagent vendors. 

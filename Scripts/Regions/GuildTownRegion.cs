@@ -5,8 +5,8 @@ namespace Server.Regions
 {
     public class GuildTownRegion : BaseRegion
     {
-        public GuildTownRegion(XmlElement xml, Map map, Region parent, Guild guild)
-            : base(xml, map, parent)
+        public GuildTownRegion(string name, Map map, Rectangle2D[] area, BaseGuild guild)
+            : base(name, map, 1, area)
         {
             m_owningGuildId = guild.Id;
         }

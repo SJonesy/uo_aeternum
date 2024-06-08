@@ -776,7 +776,7 @@ namespace Server.Guilds
 		}
 		#endregion
 
-		public static bool NewGuildSystem { get { return Core.SE; } }
+		public static bool NewGuildSystem { get { return true; } } // TODO rabbi make sure you want to use this
 
 		public static readonly int RegistrationFee = 25000;
 		public static readonly int AbbrevLimit = 4;

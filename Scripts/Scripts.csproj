@@ -836,6 +836,7 @@
     <Compile Include="Items\Resource\PolishedMeteorite.cs" />
     <Compile Include="Items\StoreBought\MysticalPolymorphTotem.cs" />
     <Compile Include="Items\Tools\WhiteLeatherDyeTub.cs" />
+    <Compile Include="Items\TownSystem\TownStone.cs" />
     <Compile Include="Misc\Aggression.cs" />
     <Compile Include="Misc\ArchivedSaves.cs" />
     <Compile Include="Misc\Replacer.cs" />
