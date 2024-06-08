@@ -14,7 +14,8 @@
    - When a Tree of Life dies, all housing collapses, decorations are destroyed, and NPCs are despawned.
    - Whoever placed the "Banestone" receives a check in their bank box equal to the price of the banestone plus a portion of the value of the town.
 - Towns come with lots of benefits. Examples:
-   - Daily permanent account cosmetics unlock chance.
+   - Every week, there is a zero-sum roll between all towns where a single town's members will all receive a cosmetic unlock.
+   - Daily permanent account cosmetics unlock chance NPCs.
    - Discounted reagent vendors. 
    - Training NPCs.
    - Powerful NPC "Guards" that attack non-friendlies.
@@ -67,10 +68,10 @@
 - 3 faction PvP system, Order/Chaos/Balance. Old School parry mages, and find a custom shield for the balance faction.
 - PvE class based system. Wearable/tradeable/lootable items that give you a set of "class" powers. These don't overwrite your existing template, so class + skills creates a large variety of PvE options.
    - Warrior: Damage mitigation, taunt, bleed proc
-   - Priest: AoE GHeal, AoE Bandage, AoE buffs
-   - Wizard: Extra Spell Damage, Increased Mana Regen
    - Shadowknight: Damage mitigation, taunt, lifetap proc
    - Paladin: Damage mitigation, taunt, AoE heal proc
+   - Priest: AoE pulse heal, AoE Bandage, AoE buffs
+   - Wizard: Extra Spell Damage, Increased Mana Regen
 - Characters have a PvE "level" that gives them direct bonuses depending on what class they have activated.
 - Early Cash Pressure
    - Due to the seasonal nature, the server needs a series of interesting and meaningful choices when it comes to boostrapping 3 fresh accounts. This section outlines early thoughts on how to make the gold you earn and spend interesting.
