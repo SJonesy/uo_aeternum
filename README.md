@@ -3,15 +3,13 @@
 ## In Development Features
 
 ### Housing and Guild Towns
-- Players can not place houses freely.
-- Guild Leaders can place a "Tree of Life" which creates an area of size [Width]x[Height] in which guild members can place houses, decorations, and NPCs.
-- Trees of Life can be destroyed.
-   - Interacting with the "Tree of Life" lets guild leaders pick a vulnerability window. This can be changed once a week and defaults to NA prime time.
+- Town Stones can be destroyed.
+   - Interacting with the "Town Stone" lets guild leaders pick a vulnerability window. This can be changed once a week and defaults to NA prime time.
    - During the vulnerability window, anyone can place a "Banestone", which is a destructible object. While a "Banestone" is present in a town:
       - Everyone in the town will flag as grey.
-      - The Tree of Life will be vulnerable to attack.
+      - The Town Stone will be vulnerable to attack.
       - After an hour, the Banestone disappears and the town is no longer vulnerable.
-   - When a Tree of Life dies, all housing collapses, decorations are destroyed, and NPCs are despawned.
+   - When a Town Stone dies, all housing collapses, decorations are destroyed, and NPCs are despawned.
    - Whoever placed the "Banestone" receives a check in their bank box equal to the price of the banestone plus a portion of the value of the town.
 - Towns come with lots of benefits that scale with the value of the town. Examples:
    - Every week, there is a zero-sum roll between all towns where a single town's members will all receive a cosmetic unlock.
@@ -20,7 +18,8 @@
    - Training NPCs.
    - Powerful NPC "Guards" that attack non-friendlies.
    - Hourly free magic items.
-   - Automatic resource harvesting in the area.
+   - Automatic resource harvesting in the area?
+   - NPCs that increase resource gathering in the town
    - Taxable housing.
 
 ### Seasonality
@@ -42,20 +41,17 @@
 - A "Stone of Malice" is an item that drops from some evil mobs and can be traded between players.
 - A "Stone of Malice" can be traded to any Paladin NPC for some amount of gold or rewards.
 
-###
-
 ## Complete Features
-- Heh
 
-### Guild Towns
+### Housing and Guild Towns
+- Players can not place houses freely.
+- Guild Leaders can place a "Town Stone" which creates an area of size 80x80 in which guild members can place houses, decorations, and NPCs.
 
 ### Seasonality
 
 ### Achievements
 
 ### Murderer System
-
-### Early Cash Pressure
 
 
 ## Misc Thoughts as I have them
@@ -75,6 +71,6 @@
 - Characters have a PvE "level" that gives them direct bonuses depending on what class they have activated.
 - Early Cash Pressure
    - Due to the seasonal nature, the server needs a series of interesting and meaningful choices when it comes to boostrapping 3 fresh accounts. This section outlines early thoughts on how to make the gold you earn and spend interesting.
-   - Getting a Tree of Life and valuable town upgrades down.
+   - Getting a Town Stone and valuable town upgrades down.
    - Boat: Remote island spawns give more cash than moongate connected islands, and runes to these islands can be valuable guild resources early
 
