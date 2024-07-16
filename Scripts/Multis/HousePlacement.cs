@@ -64,6 +64,8 @@ namespace Server.Multis
                 return HousePlacementResult.BadRegion;
             }
 
+            // TODO rabbi you need to make sure the player has permission to place in the guild town
+
             // This holds data describing the internal structure of the house
             MultiComponentList mcl = MultiData.GetComponents(multiID);
 

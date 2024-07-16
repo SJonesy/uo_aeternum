@@ -3,24 +3,24 @@ using Server.Mobiles;
 
 namespace Server.Factions
 {
-    public class TownStone : BaseSystemController
+    public class FactionTownStone : BaseSystemController
     {
         private Town m_Town;
         [Constructable]
-        public TownStone()
+        public FactionTownStone()
             : this(null)
         {
         }
 
         [Constructable]
-        public TownStone(Town town)
+        public FactionTownStone(Town town)
             : base(0xEDE)
         {
             this.Movable = false;
             this.Town = town;
         }
 
-        public TownStone(Serial serial)
+        public FactionTownStone(Serial serial)
             : base(serial)
         {
         }

@@ -73,9 +73,9 @@ namespace Server.Factions
 				WeakEntityCollection.Add("factions", mono.Sigil);
 			}
 
-			if (!CheckExistance(def.TownStone, facet, typeof(TownStone)))
+			if (!CheckExistance(def.TownStone, facet, typeof(FactionTownStone)))
 			{
-				TownStone stone = new TownStone(town);
+				FactionTownStone stone = new FactionTownStone(town);
 				WeakEntityCollection.Add("factions", stone);
 				stone.MoveToWorld(def.TownStone, facet);
 			}

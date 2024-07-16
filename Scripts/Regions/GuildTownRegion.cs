@@ -9,7 +9,7 @@ namespace Server.Regions
 {
     public class GuildTownRegion : BaseRegion
     {
-        public GuildTownRegion(string name, Map map, Rectangle2D[] area, BaseGuild guild, Townstone townStone)
+        public GuildTownRegion(string name, Map map, Rectangle2D[] area, BaseGuild guild, TownStone townStone)
             : base(name, map, 1, area)
         {
             m_owningGuildId = guild.Id;
@@ -17,8 +17,8 @@ namespace Server.Regions
         }
 
         private int m_owningGuildId;
-        private bool m_publicHousing;
-        private Townstone m_townStone;
+        private bool m_publicHousing = false;
+        private TownStone m_townStone;
 
         public override bool AllowHousing(Mobile from, Point3D p)
         {

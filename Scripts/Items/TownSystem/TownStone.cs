@@ -6,7 +6,7 @@ using System;
 
 namespace Server.Items
 {
-    public class Townstone : Item
+    public class TownStone : Item
     {
         private int m_GuildId;
         private string m_TownName = "Unnamed Town";
@@ -50,7 +50,7 @@ namespace Server.Items
         }
         #endregion
 
-        public Townstone(BaseGuild g)
+        public TownStone(BaseGuild g)
             : base(0xED4)
         {
             this.m_GuildId = g.Id;
@@ -58,7 +58,7 @@ namespace Server.Items
             this.Movable = false;
         }
 
-        public Townstone(Serial serial)
+        public TownStone(Serial serial)
             : base(serial)
         {
         }
@@ -116,17 +116,17 @@ namespace Server.Items
     }
 
     [Flipable(0x14F0, 0x14EF)]
-    public class TownstoneDeed : Item
+    public class TownStoneDeed : Item
     {
         [Constructable]
-        public TownstoneDeed() : base(0x14F0)
+        public TownStoneDeed() : base(0x14F0)
         {
             this.Weight = 1.0;
             this.Name = "a townstone deed";
             this.BlessItem();
         }
 
-        public TownstoneDeed(Serial serial)
+        public TownStoneDeed(Serial serial)
             : base(serial)
         {
         }
@@ -163,17 +163,17 @@ namespace Server.Items
             }
 
             // Create the townstone
-            Item townstone = new Townstone(from.Guild);
+            Item townstone = new TownStone(from.Guild);
             townstone.MoveToWorld(loc, from.Map);
 
             // Create the town region
             Rectangle2D townArea = new Rectangle2D(loc.X - 40, loc.Y - 40, 80, 80);
             Rectangle2D[] totalTownArea = new Rectangle2D[] { townArea };
             string regionName = String.Format("{0} Town", from.Guild.Name);
-            GuildTownRegion region = new GuildTownRegion(regionName, Map.Felucca, totalTownArea, from.Guild);
+            GuildTownRegion region = new GuildTownRegion(regionName, Map.Felucca, totalTownArea, from.Guild, (TownStone)townstone);
             region.Register();
 
-            ((Townstone)townstone).TownRegion = region;
+            ((TownStone)townstone).TownRegion = region;
 
             this.Delete();
         }

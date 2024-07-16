@@ -9630,7 +9630,7 @@
     <Compile Include="Services\Factions\Items\TownMonolith.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Services\Factions\Items\TownStone.cs">
+    <Compile Include="Services\Factions\Items\FactionTownStone.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\Factions\Items\Traps\BaseFactionTrap.cs">
