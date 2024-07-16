@@ -42,4 +42,4 @@
 !/Data/*
 !/bin/rosyln/*
 
-*.subllime-*
+**/*.sublime-*
